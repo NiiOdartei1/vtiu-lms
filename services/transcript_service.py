@@ -636,12 +636,12 @@ class TranscriptService:
             <div class="container">
                 <div class="header">
                     <div class="header-left">
-                        <div class="logo"><img src="file:///c:/Users/lampt/Desktop/LMS/LMS/static/DHI-LOGO.png" alt="School Logo"></div>
+                        <div class="logo"><img src="file:///c:/Users/lampt/Desktop/LMS/LMS/static/VTIU-LOGO.png" alt="School Logo"></div>
                         <div class="school-details">
-                            <p><strong>DHI COLLEGE OF HEALTH AND EDUCATION</strong></p>
+                            <p><strong>VTIU COLLEGE OF HEALTH AND EDUCATION</strong></p>
                             <p>ACADEMIC AFFAIRS OFFICE</p>
                             <p>P.O.Box 12959, Kumasi - Ghana. Contact 0307020844</p>
-                            <p>Email: info@dhi.edu.gh</p>
+                            <p>Email: info@vtiu.edu.gh</p>
                         </div>
                     </div>
                     <div class="title">
@@ -931,12 +931,12 @@ class TranscriptService:
             <div class="container">
                 <div class="header">
                     <div class="header-left">
-                        <div class="logo"><img src="file:///c:/Users/lampt/Desktop/LMS/LMS/static/DHI-LOGO.png" alt="School Logo"></div>
+                        <div class="logo"><img src="file:///c:/Users/lampt/Desktop/LMS/LMS/static/VTIU-LOGO.png" alt="School Logo"></div>
                         <div class="school-details">
-                            <p><strong>DHI COLLEGE OF HEALTH AND EDUCATION</strong></p>
+                            <p><strong>VTIU COLLEGE OF HEALTH AND EDUCATION</strong></p>
                             <p>ACADEMIC AFFAIRS OFFICE</p>
                             <p>P.O.Box 12959, Kumasi - Ghana. Contact 0307020844</p>
-                            <p>Email: info@dhi.edu.gh</p>
+                            <p>Email: info@vtiu.edu.gh</p>
                         </div>
                     </div>
                     <div class="title">

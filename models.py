@@ -144,7 +144,7 @@ class Admin(db.Model, UserMixin):
 
     Unique username for login
 
-    Format: firstname.lastname@admin.dhi.edu.gh
+    Format: firstname.lastname@admin.vtiu.edu.gh
 
     """
 
@@ -1200,7 +1200,7 @@ new_admin = Admin(
 
     admin_id='FIN001',
 
-    username='john.finance@admin.dhi.edu.gh',
+    username='john.finance@admin.vtiu.edu.gh',
 
     email='john.finance@school.edu',
 
@@ -1282,7 +1282,7 @@ new_admin = Admin.from_dict({
 
     'admin_id': 'ACA001',
 
-    'username': 'jane.academic@admin.dhi.edu.gh',
+    'username': 'jane.academic@admin.vtiu.edu.gh',
 
     'email': 'jane.academic@school.edu',
 

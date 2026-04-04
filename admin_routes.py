@@ -1907,7 +1907,7 @@ def generate_student_credentials():
 
         "success": true,
 
-        "username": "jolamptey@st.dhi.edu.gh",
+        "username": "jolamptey@st.vtiu.edu.gh",
 
         "password": "Abc123!@#"
 
@@ -2848,13 +2848,13 @@ def generate_unique_username(first_name, middle_name, last_name, role):
 
     Examples:
 
-    - Joseph Odartei Lamptey → jolamptey@st.dhi.edu.gh
+    - Joseph Odartei Lamptey → jolamptey@st.vtiu.edu.gh
 
-    - John Smith → jsmith@st.dhi.edu.gh
+    - John Smith → jsmith@st.vtiu.edu.gh
 
-    - Mary Jane Watson → mjwatson@st.dhi.edu.gh
+    - Mary Jane Watson → mjwatson@st.vtiu.edu.gh
 
-    - "" Odartei Lamptey → olamptey@st.dhi.edu.gh (shifts middle to first)
+    - "" Odartei Lamptey → olamptey@st.vtiu.edu.gh (shifts middle to first)
 
     
 
@@ -2940,21 +2940,21 @@ def generate_unique_username(first_name, middle_name, last_name, role):
 
     domain_map = {
 
-        'student': 'st.dhi.edu.gh',
+        'student': 'st.vtiu.edu.gh',
 
-        'teacher': 'tch.dhi.edu.gh',
+        'teacher': 'tch.vtiu.edu.gh',
 
-        'finance_admin': 'finance.dhi.edu.gh',
+        'finance_admin': 'finance.vtiu.edu.gh',
 
-        'academic_admin': 'academic.dhi.edu.gh',
+        'academic_admin': 'academic.vtiu.edu.gh',
 
-        'admissions_admin': 'admissions.dhi.edu.gh',
+        'admissions_admin': 'admissions.vtiu.edu.gh',
 
-        'superadmin': 'admin.dhi.edu.gh',  # Only superadmin uses admin.dhi.edu.gh
+        'superadmin': 'admin.vtiu.edu.gh',  # Only superadmin uses admin.vtiu.edu.gh
 
     }
 
-    domain = domain_map.get(role.lower(), 'dhi.edu.gh')
+    domain = domain_map.get(role.lower(), 'vtiu.edu.gh')
 
     
 
@@ -3028,7 +3028,7 @@ def setup_username_password_routes(admin_bp):
 
         {
 
-            "username": "jolamptey@st.dhi.edu.gh",
+            "username": "jolamptey@st.vtiu.edu.gh",
 
             "success": true
 

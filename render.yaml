@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: dhi-online
+    name: vtiu-online
     env: python
     plan: starter
     buildCommand: pip install -r requirements.txt

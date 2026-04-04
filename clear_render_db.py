@@ -11,8 +11,8 @@ from werkzeug.security import generate_password_hash
 DB_CONFIG = {
     'host': 'dpg-d66d9besb7us73an19bg-a.oregon-postgres.render.com',
     'port': 5432,
-    'database': 'dhi_db_mxus',
-    'user': 'dhi_db_mxus_user',
+    'database': 'vtiu_db_mxus',
+    'user': 'vtiu_db_mxus_user',
     'password': 'g0Zgb69qtKgP6CHZvXB6at3dkMDnUxnQ'
 }
 
@@ -104,7 +104,7 @@ def clear_render_database():
                     last_name = EXCLUDED.last_name,
                     role = EXCLUDED.role,
                     password_hash = EXCLUDED.password_hash;
-            """, ('SUP001', 'superadmin', 'superadmin@dhi.edu.gh', 'System', 'Administrator', 'superadmin', password_hash))
+            """, ('SUP001', 'superadmin', 'superadmin@vtiu.edu.gh', 'System', 'Administrator', 'superadmin', password_hash))
             
             print("👤 Created/updated SuperAdmin account")
             

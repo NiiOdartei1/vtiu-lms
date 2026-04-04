@@ -54,7 +54,7 @@ def clear_production_database():
             superadmin = Admin(
                 admin_id='SUP001',
                 username='superadmin',
-                email='superadmin@dhi.edu.gh',
+                email='superadmin@vtiu.edu.gh',
                 first_name='System',
                 last_name='Administrator',
                 role='superadmin'

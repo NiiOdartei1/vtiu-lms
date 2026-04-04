@@ -87,7 +87,7 @@ def generate_student_id_card_pdf(student):
             profile_pic_base64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
 
     # School logo
-    logo_path = os.path.join(current_app.root_path, 'static', 'DHI-LOGO.png')
+    logo_path = os.path.join(current_app.root_path, 'static', 'VTIU-LOGO.png')
     logo_base64 = None
     if os.path.exists(logo_path):
         logo_base64 = image_to_base64(logo_path)
@@ -347,7 +347,7 @@ def generate_student_id_card_pdf(student):
             <div class="front-header">
                 {f'<img src="{logo_base64}" class="logo">' if logo_base64 else ''}
                 <div class="header-text">
-                    <strong>DHI</strong>
+                    <strong>VTIU</strong>
                     COLLEGE OF HEALTH & EDUCATION
                 </div>
             </div>
@@ -374,12 +374,12 @@ def generate_student_id_card_pdf(student):
 
         <!-- BACK SIDE -->
         <div class="card back">
-            <div class="back-header">DHI COLLEGE OF HEALTH & EDUCATION</div>
+            <div class="back-header">VTIU COLLEGE OF HEALTH & EDUCATION</div>
             
             <div class="back-section">
                 <h4>Emergency Contact</h4>
                 <p><strong>Tel:</strong> +233 123 456 789</p>
-                <p><strong>Email:</strong> emergency@dhi.edu.gh</p>
+                <p><strong>Email:</strong> emergency@vtiu.edu.gh</p>
             </div>
             
             <div class="back-section">
@@ -394,7 +394,7 @@ def generate_student_id_card_pdf(student):
             
             <div class="back-section">
                 <h4>Important Notice</h4>
-                <p>This card is property of DHI College. Unauthorized use is prohibited. Card must be surrendered upon request.</p>
+                <p>This card is property of VTIU College. Unauthorized use is prohibited. Card must be surrendered upon request.</p>
             </div>
             
             <div class="signature-line">AUTHORIZED SIGNATURE</div>

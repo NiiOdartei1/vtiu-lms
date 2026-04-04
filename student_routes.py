@@ -868,7 +868,7 @@ def download_registered_courses_pdf():
 
         import os
 
-        logo_path = os.path.join(os.path.dirname(__file__), 'static', 'DHI-LOGO.png')
+        logo_path = os.path.join(os.path.dirname(__file__), 'static', 'VTIU-LOGO.png')
 
         
 
@@ -2665,7 +2665,7 @@ def download_student_exam_timetable():
 
         qr_img = generate_logo_qr(qr_data,
 
-                                  logo_path='static/DHI-LOGO.png',
+                                  logo_path='static/VTIU-LOGO.png',
 
                                   final_size=qr_generate_size,
 

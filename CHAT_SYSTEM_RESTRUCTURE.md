@@ -78,7 +78,7 @@ GET /chat/users?role={teacher|student|admin}&programme=X&level=Y
 [
   {
     "id": "admin-public-id",
-    "name": "john.finance@admin.dhi.edu.gh (Finance Admin)"
+    "name": "john.finance@admin.vtiu.edu.gh (Finance Admin)"
   },
   ...
 ]

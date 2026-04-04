@@ -6,7 +6,7 @@ import re
 # Global session for connection reuse
 session = requests.Session()
 session.headers.update({
-    'User-Agent': 'DHI-LMS/1.0'
+    'User-Agent': 'VTIU-LMS/1.0'
 })
 
 def validate_email(email):
@@ -92,7 +92,7 @@ def _send_via_brevo(to_email, subject, body, sender, is_html=True):
         payload = {
             "sender": {
                 "email": sender,
-                "name": "DHI LMS"
+                "name": "VTIU LMS"
             },
             "to": [{"email": to_email}],
             "subject": subject,
@@ -386,12 +386,12 @@ def send_teacher_registration_email(email, first_name, last_name, username, user
     """
     name = f"{first_name} {last_name}"
     
-    subject = "Your Teacher Account is Ready – DHI LMS"
+    subject = "Your Teacher Account is Ready – VTIU LMS"
     
     body = f"""
 Dear {name},
 
-Your teacher account has been successfully created at DHI College of Health & Education.
+Your teacher account has been successfully created at VTIU College of Health & Education.
 
 Your login credentials are:
 - Username: {username}
@@ -409,7 +409,7 @@ Important:
 - Contact IT support if you have any issues
 
 Best regards,
-DHI College of Health & Education
+VTIU College of Health & Education
 IT Department
 """
 
@@ -433,12 +433,12 @@ def send_admin_registration_email(email, first_name, last_name, username, admin_
         'superadmin': 'Super Admin'
     }.get(role, role.replace('_', ' ').title())
     
-    subject = f"Your {role_display} Account is Ready – DHI LMS"
+    subject = f"Your {role_display} Account is Ready – VTIU LMS"
     
     body = f"""
 Dear {name},
 
-Your {role_display} account has been successfully created at DHI College of Health & Education.
+Your {role_display} account has been successfully created at VTIU College of Health & Education.
 
 Your login credentials are:
 - Username: {username}
@@ -457,7 +457,7 @@ Important:
 - Your role permissions have been configured accordingly
 
 Best regards,
-DHI College of Health & Education
+VTIU College of Health & Education
 System Administration
 """
 
@@ -470,12 +470,12 @@ def send_continuing_student_credentials_email(email, first_name, last_name, user
     """
     name = f"{first_name} {last_name}"
     
-    subject = "Your Student Account is Ready – DHI LMS Portal"
+    subject = "Your Student Account is Ready – VTIU LMS Portal"
     
     body = f"""
 Dear {name},
 
-Your continuing student account has been successfully created at DHI College of Health & Education.
+Your continuing student account has been successfully created at VTIU College of Health & Education.
 
 Your login credentials are:
 - Username: {username}
@@ -497,7 +497,7 @@ Important:
 - Your academic records have been updated for the new level
 
 Best regards,
-DHI College of Health & Education
+VTIU College of Health & Education
 Student Administration
 """
 
