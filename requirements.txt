@@ -43,4 +43,3 @@ WTForms==3.2.1
 WTForms-SQLAlchemy==0.3
 email_validator==2.1.0
 psutil==5.9.8
-z
