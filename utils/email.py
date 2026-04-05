@@ -391,7 +391,7 @@ def send_teacher_registration_email(email, first_name, last_name, username, user
     body = f"""
 Dear {name},
 
-Your teacher account has been successfully created at VTIU College of Health & Education.
+Your teacher account has been successfully created at VOCATIONAL & TECHNICAL INSPIRED UNIVERSITY.
 
 Your login credentials are:
 - Username: {username}
@@ -409,7 +409,7 @@ Important:
 - Contact IT support if you have any issues
 
 Best regards,
-VTIU College of Health & Education
+VOCATIONAL & TECHNICAL INSPIRED UNIVERSITY
 IT Department
 """
 
@@ -438,7 +438,7 @@ def send_admin_registration_email(email, first_name, last_name, username, admin_
     body = f"""
 Dear {name},
 
-Your {role_display} account has been successfully created at VTIU College of Health & Education.
+Your {role_display} account has been successfully created at VOCATIONAL & TECHNICAL INSPIRED UNIVERSITY.
 
 Your login credentials are:
 - Username: {username}
@@ -457,7 +457,7 @@ Important:
 - Your role permissions have been configured accordingly
 
 Best regards,
-VTIU College of Health & Education
+    VOCATIONAL & TECHNICAL INSPIRED UNIVERSITY
 System Administration
 """
 
@@ -475,7 +475,7 @@ def send_continuing_student_credentials_email(email, first_name, last_name, user
     body = f"""
 Dear {name},
 
-Your continuing student account has been successfully created at VTIU College of Health & Education.
+Your continuing student account has been successfully created at VOCATIONAL & TECHNICAL INSPIRED UNIVERSITY.
 
 Your login credentials are:
 - Username: {username}
@@ -497,7 +497,7 @@ Important:
 - Your academic records have been updated for the new level
 
 Best regards,
-VTIU College of Health & Education
+    VOCATIONAL & TECHNICAL INSPIRED UNIVERSITY
 Student Administration
 """
 

@@ -348,7 +348,7 @@ def generate_student_id_card_pdf(student):
                 {f'<img src="{logo_base64}" class="logo">' if logo_base64 else ''}
                 <div class="header-text">
                     <strong>VTIU</strong>
-                    COLLEGE OF HEALTH & EDUCATION
+                    VOCATIONAL & TECHNICAL INSPIRED UNIVERSITY
                 </div>
             </div>
             
@@ -374,7 +374,7 @@ def generate_student_id_card_pdf(student):
 
         <!-- BACK SIDE -->
         <div class="card back">
-            <div class="back-header">VTIU COLLEGE OF HEALTH & EDUCATION</div>
+            <div class="back-header">VOCATIONAL & TECHNICAL INSPIRED UNIVERSITY</div>
             
             <div class="back-section">
                 <h4>Emergency Contact</h4>

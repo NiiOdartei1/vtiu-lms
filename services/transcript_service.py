@@ -638,7 +638,7 @@ class TranscriptService:
                     <div class="header-left">
                         <div class="logo"><img src="file:///c:/Users/lampt/Desktop/LMS/LMS/static/VTIU-LOGO.png" alt="School Logo"></div>
                         <div class="school-details">
-                            <p><strong>VTIU COLLEGE OF HEALTH AND EDUCATION</strong></p>
+                            <p><strong>VOCATIONAL & TECHNICAL INSPIRED UNIVERSITY</strong></p>
                             <p>ACADEMIC AFFAIRS OFFICE</p>
                             <p>P.O.Box 12959, Kumasi - Ghana. Contact 0307020844</p>
                             <p>Email: info@vtiu.edu.gh</p>
@@ -933,7 +933,7 @@ class TranscriptService:
                     <div class="header-left">
                         <div class="logo"><img src="file:///c:/Users/lampt/Desktop/LMS/LMS/static/VTIU-LOGO.png" alt="School Logo"></div>
                         <div class="school-details">
-                            <p><strong>VTIU COLLEGE OF HEALTH AND EDUCATION</strong></p>
+                            <p><strong>VOCATIONAL & TECHNICAL INSPIRED UNIVERSITY</strong></p>
                             <p>ACADEMIC AFFAIRS OFFICE</p>
                             <p>P.O.Box 12959, Kumasi - Ghana. Contact 0307020844</p>
                             <p>Email: info@vtiu.edu.gh</p>
