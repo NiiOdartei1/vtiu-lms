@@ -29,8 +29,32 @@ def get_programme_choices():
         'Diploma in Early Childhood Education'
     ]
 
+    # Vocational & Technical Programmes
+    vocational_programmes = [
+        'Plumbing & Gas Fitting',
+        'Electrical Installation',
+        'Welding & Fabrication',
+        'Refrigeration & Air Conditioning',
+        'Carpentry & Joinery',
+        'Masonry & Bricklaying',
+        'Painting & Decoration',
+        'Motor Vehicle Mechanics',
+        'Automotive Electronics',
+        'Heavy Equipment Operation',
+        'Building Construction',
+        'Surveying & Mapping',
+        'Hairdressing & Beauty',
+        'Tailoring & Fashion Design',
+        'Food Preparation & Catering',
+        'Hospitality Management',
+        'Tourism & Travel Services',
+        'Agriculture & Crop Production',
+        'Livestock & Animal Husbandry',
+        'Industrial Maintenance'
+    ]
+
     # Combine, remove duplicates, and return as list of tuples for WTForms
-    all_programmes = sorted(set(certificate_programmes + diploma_programmes))
+    all_programmes = sorted(set(certificate_programmes + diploma_programmes + vocational_programmes))
     return [(p, p) for p in all_programmes]
 
 def get_level_choices():

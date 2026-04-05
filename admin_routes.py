@@ -92,6 +92,12 @@ def is_superadmin_or_academic_admin():
     return current_user.is_superadmin or current_user.is_academic_admin
 
 
+def check_admin_access():
+    """Helper to check if current user is an admin; aborts if not"""
+    if not isinstance(current_user, Admin):
+        abort(403)
+
+
 
 
 
@@ -4014,7 +4020,7 @@ def delete_quiz(quiz_id):
 
 def restore_quiz():
 
-    admin_only()
+    check_admin_access()
 
     if request.method == 'POST':
 
@@ -4697,7 +4703,7 @@ def manage_events():
 
 def add_event():
 
-    admin_only()
+    check_admin_access()
 
     date = request.form.get('date')
 
@@ -4739,7 +4745,7 @@ def add_event():
 
 def edit_event(event_id):
 
-    admin_only()
+    check_admin_access()
 
     event = AcademicCalendar.query.get_or_404(event_id)
 
@@ -4763,7 +4769,7 @@ def edit_event(event_id):
 
 def delete_event(event_id):
 
-    admin_only()
+    check_admin_access()
 
     event = AcademicCalendar.query.get_or_404(event_id)
 
@@ -4785,7 +4791,7 @@ def delete_event(event_id):
 
 def events_json():
 
-    admin_only()
+    check_admin_access()
 
     events = AcademicCalendar.query.all()
 

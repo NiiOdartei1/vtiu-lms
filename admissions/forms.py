@@ -111,6 +111,29 @@ DIPLOMA_PROGRAMMES = [
     ('Diploma in Early Childhood Education', 'Diploma in Early Childhood Education')
 ]
 
+VOCATIONAL_PROGRAMMES = [
+    ('Plumbing & Gas Fitting', 'Plumbing & Gas Fitting'),
+    ('Electrical Installation', 'Electrical Installation'),
+    ('Welding & Fabrication', 'Welding & Fabrication'),
+    ('Refrigeration & Air Conditioning', 'Refrigeration & Air Conditioning'),
+    ('Carpentry & Joinery', 'Carpentry & Joinery'),
+    ('Masonry & Bricklaying', 'Masonry & Bricklaying'),
+    ('Painting & Decoration', 'Painting & Decoration'),
+    ('Motor Vehicle Mechanics', 'Motor Vehicle Mechanics'),
+    ('Automotive Electronics', 'Automotive Electronics'),
+    ('Heavy Equipment Operation', 'Heavy Equipment Operation'),
+    ('Building Construction', 'Building Construction'),
+    ('Surveying & Mapping', 'Surveying & Mapping'),
+    ('Hairdressing & Beauty', 'Hairdressing & Beauty'),
+    ('Tailoring & Fashion Design', 'Tailoring & Fashion Design'),
+    ('Food Preparation & Catering', 'Food Preparation & Catering'),
+    ('Hospitality Management', 'Hospitality Management'),
+    ('Tourism & Travel Services', 'Tourism & Travel Services'),
+    ('Agriculture & Crop Production', 'Agriculture & Crop Production'),
+    ('Livestock & Animal Husbandry', 'Livestock & Animal Husbandry'),
+    ('Industrial Maintenance', 'Industrial Maintenance')
+]
+
 # Study formats - Regular and Online only
 STUDY_FORMATS = [
     ('', '— Select Format —'),
@@ -122,7 +145,7 @@ class ProgrammeChoiceForm(FlaskForm):
     # 1st Choice
     first_choice = SelectField(
         '1st Choice Programme',
-        choices=CERTIFICATE_PROGRAMMES + DIPLOMA_PROGRAMMES,
+        choices=CERTIFICATE_PROGRAMMES + DIPLOMA_PROGRAMMES + VOCATIONAL_PROGRAMMES,
         validators=[DataRequired(message="Please select your first choice programme.")]
     )
     first_stream = SelectField(
@@ -134,7 +157,7 @@ class ProgrammeChoiceForm(FlaskForm):
     # 2nd Choice
     second_choice = SelectField(
         '2nd Choice Programme',
-        choices=CERTIFICATE_PROGRAMMES + DIPLOMA_PROGRAMMES,
+        choices=CERTIFICATE_PROGRAMMES + DIPLOMA_PROGRAMMES + VOCATIONAL_PROGRAMMES,
         validators=[Optional()]
     )
     second_stream = SelectField(
@@ -146,7 +169,7 @@ class ProgrammeChoiceForm(FlaskForm):
     # 3rd Choice
     third_choice = SelectField(
         '3rd Choice Programme',
-        choices=CERTIFICATE_PROGRAMMES + DIPLOMA_PROGRAMMES,
+        choices=CERTIFICATE_PROGRAMMES + DIPLOMA_PROGRAMMES + VOCATIONAL_PROGRAMMES,
         validators=[Optional()]
     )
     third_stream = SelectField(
