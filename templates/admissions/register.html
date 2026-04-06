@@ -1,7 +1,46 @@
 {% extends 'admissions/base_admission.html' %}
 {% block title %}Create Account{% endblock %}
 
+{% block extra_css %}
+<style>
+  /* Background carousel container */
+  #background-carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-image 0.8s ease-in-out;
+  }
+
+  /* Dark overlay for readability */
+  #background-carousel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  /* Adjust content to overlay the background */
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+</style>
+{% endblock %}
+
 {% block content %}
+<!-- Background Carousel -->
+<div id="background-carousel"></div>
+
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
 
   <div class="card shadow-lg border-0" style="max-width: 450px; width:100%; border-radius:15px;">
@@ -73,12 +112,41 @@
   </div>
 </div>
 
-<!-- Password Toggle Script -->
+<!-- Background Carousel & Password Toggle Script -->
 <script>
+// Background images array
+const backgroundImages = [
+  "{{ url_for('static', filename='download (1).jpg') }}",
+  "{{ url_for('static', filename='download.jpg') }}",
+  "{{ url_for('static', filename='News.jpg') }}",
+  "{{ url_for('static', filename='Practical work at WCC_ Image supplied by WCC_.jpg') }}",
+  "{{ url_for('static', filename='The Biased Policies That Are Pushing Black Girls Out of School.jpg') }}"
+];
+
+let currentImageIndex = 0;
+
+// Initialize background carousel
+function initBackgroundCarousel() {
+  const carousel = document.getElementById('background-carousel');
+  
+  // Set initial background
+  carousel.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
+  
+  // Change background every 10 seconds
+  setInterval(() => {
+    currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+    carousel.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
+  }, 10000);
+}
+
+// Password toggle function
 function togglePassword() {
   const field = document.getElementById("passwordField");
   field.type = field.type === "password" ? "text" : "password";
 }
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initBackgroundCarousel);
 </script>
 
 {% endblock %}
