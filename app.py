@@ -1,14 +1,3 @@
-# ===== GTK RUNTIME FIX FOR WEASYPRINT (Windows) =====
-import os
-import sys
-
-if sys.platform == "win32":
-    gtk_path = r"C:\Program Files\GTK3-Runtime Win64\bin"
-    if os.path.exists(gtk_path):
-        os.add_dll_directory(gtk_path)
-        os.environ["PATH"] = gtk_path + ";" + os.environ["PATH"]
-# ================================================
-
 # app.py - My LMS — Clean Production Version with Robust Database Initialization
 
 import os

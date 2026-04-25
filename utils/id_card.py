@@ -22,7 +22,7 @@ def generate_student_id_card_pdf(student):
     os.makedirs(upload_dir, exist_ok=True)
 
     # =====================================================
-    # FUNCTION: Convert image to base64 for WeasyPrint
+    # FUNCTION: Convert image to base64 for embedding in HTML
     # =====================================================
     def image_to_base64(image_path):
         """Convert an image file to base64 data URI"""

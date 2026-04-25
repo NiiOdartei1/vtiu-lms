@@ -37,7 +37,6 @@ tomli==2.3.0
 typing-extensions==4.15.0
 urllib3==2.6.3
 Werkzeug==2.3.7
-WeasyPrint==59.0
 imgkit==1.2.3
 playwright==1.40.0
 wsproto==1.2.0

@@ -444,7 +444,7 @@ class TranscriptService:
             transcript_data (dict): Output from generate_semester_transcript()
             
         Returns:
-            str: HTML string ready for WeasyPrint conversion
+            str: HTML string ready for image conversion
         """
         if not transcript_data:
             return "<p>No transcript data available.</p>"
@@ -729,7 +729,7 @@ class TranscriptService:
             transcript_data (dict): Output from generate_full_transcript()
             
         Returns:
-            str: HTML string ready for WeasyPrint conversion
+            str: HTML string ready for image conversion
         """
         if not transcript_data:
             return "<p>No transcript data available.</p>"

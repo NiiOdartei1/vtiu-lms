@@ -869,7 +869,7 @@ def download_application_pdf():
         return redirect(url_for('admissions.dashboard'))
 
     try:
-        # Modern CSS styling for colorful PDF (WeasyPrint compatible)
+        # Modern CSS styling for colorful image output
         css_content = '''
             @page {
                 size: A4;
