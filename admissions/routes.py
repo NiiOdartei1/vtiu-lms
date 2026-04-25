@@ -1001,18 +1001,18 @@ def download_application_pdf():
         </html>
         '''
         
-        # Generate PDF directly from string
-        from weasyprint import HTML as WeasyHTML
-        pdf_data = WeasyHTML(string=html_with_css).write_pdf()
+        # Generate Image from HTML
+        from utils.image_generator import generate_image_from_html
+        img_data = generate_image_from_html(html_with_css, format="png", width=850)
         
         # Return as downloadable response
-        response = make_response(pdf_data)
-        response.headers['Content-Type'] = 'application/pdf'
-        response.headers['Content-Disposition'] = f'attachment; filename=application_{application.id}.pdf'
+        response = make_response(img_data.getvalue())
+        response.headers['Content-Type'] = 'image/png'
+        response.headers['Content-Disposition'] = f'attachment; filename=application_{application.id}.png'
         return response
 
     except Exception as e:
-        logging.error(f"Failed to generate PDF: {str(e)}")
+        logging.error(f"Failed to generate image: {str(e)}")
         import traceback
         logging.error(traceback.format_exc())
         flash(f"Failed to generate PDF: {str(e)}", "danger")

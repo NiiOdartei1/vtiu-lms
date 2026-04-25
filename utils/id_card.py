@@ -4,26 +4,22 @@ import io
 import qrcode
 import base64
 from flask import current_app, url_for
-from weasyprint import HTML, CSS
-from PIL import Image
+from utils.image_generator import generate_image_from_html
 
 from models import StudentProfile
 
 def generate_student_id_card_pdf(student):
     """
-    Generate a CR80-sized student ID card as a PDF with front and back sides using WeasyPrint.
+    Generate a CR80-sized student ID card as a PNG image.
     CR80 standard: 85.6mm x 53.98mm (3.370" x 2.125")
     
     FIXED: Handles profile picture paths correctly (no double paths)
-    Returns the relative URL to the PDF file.
+    Returns the relative URL to the PNG file.
     """
 
     # Output directory
     upload_dir = os.path.join(current_app.root_path, 'static', 'uploads', 'id_cards')
     os.makedirs(upload_dir, exist_ok=True)
-    
-    filename = f"id_card_{student.user_id}.pdf"
-    file_path = os.path.join(upload_dir, filename)
 
     # =====================================================
     # FUNCTION: Convert image to base64 for WeasyPrint
@@ -406,17 +402,24 @@ def generate_student_id_card_pdf(student):
     """
 
     # =====================================================
-    # Generate PDF
+    # Generate Image
     # =====================================================
     try:
-        HTML(string=html_content).write_pdf(
-            file_path,
-            stylesheets=[CSS(string='@page { margin: 0; padding: 0; }')]
-        )
+        # Update filename to PNG
+        filename = f"id_card_{student.user_id}.png"
+        file_path = os.path.join(upload_dir, filename)
+        
+        # Generate image using our image generator
+        img_buf = generate_image_from_html(html_content, format="png", width=350)
+        
+        # Save the image
+        with open(file_path, 'wb') as f:
+            f.write(img_buf.getvalue())
+        
         print(f"ID card generated successfully: {filename}")
         print(f"  Profile picture used: {profile_pic_filename}")
     except Exception as e:
-        print(f"Error generating PDF: {e}")
+        print(f"Error generating image: {e}")
         import traceback
         traceback.print_exc()
         raise
