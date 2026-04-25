@@ -4,11 +4,11 @@ Student routes for viewing and downloading transcripts.
 Add these routes to your student blueprint.
 """
 
-from flask import Blueprint, render_template, abort, flash, redirect, url_for, request, jsonify, send_file
+from flask import Blueprint, render_template, abort, flash, redirect, url_for, request, jsonify, send_file, make_response
 from flask_login import login_required, current_user
 from io import BytesIO
 from datetime import datetime
-from weasyprint import HTML
+from utils.image_generator import generate_image_from_html
 
 from services.transcript_service import TranscriptService
 from services.semester_grading_service import SemesterGradingService
@@ -85,7 +85,7 @@ def create_student_transcript_blueprint():
     @login_required
     def download_semester_pdf(academic_year, semester):
         """
-        Download semester transcript as PDF using WeasyPrint.
+        Download semester transcript as PNG image.
         """
         if not current_user.is_student:
             abort(403)
@@ -104,22 +104,18 @@ def create_student_transcript_blueprint():
         # Generate HTML
         html_content = TranscriptService.generate_semester_transcript_html(transcript)
         
-        # Convert HTML to PDF using WeasyPrint
+        # Convert HTML to image
         try:
-            pdf_file = BytesIO()
-            HTML(string=html_content).write_pdf(pdf_file)
-            pdf_file.seek(0)
+            img_data = generate_image_from_html(html_content, format="png", width=1000)
             
-            filename = f"Transcript_{academic_year.replace('/', '-')}_Sem{semester}.pdf"
+            filename = f"Transcript_{academic_year.replace('/', '-')}_Sem{semester}.png"
             
-            return send_file(
-                pdf_file,
-                mimetype='application/pdf',
-                as_attachment=True,
-                download_name=filename
-            )
+            response = make_response(img_data.getvalue())
+            response.headers['Content-Type'] = 'image/png'
+            response.headers['Content-Disposition'] = f'attachment; filename={filename}'
+            return response
         except Exception as e:
-            flash(f"Error generating PDF: {str(e)}", "danger")
+            flash(f"Error generating image: {str(e)}", "danger")
             return redirect(url_for('student_transcript.semester_specific', 
                                   academic_year=academic_year, semester=semester))
     
@@ -127,7 +123,7 @@ def create_student_transcript_blueprint():
     @login_required
     def download_full_pdf():
         """
-        Download full transcript as PDF using WeasyPrint.
+        Download full transcript as PNG image.
         """
         if not current_user.is_student:
             abort(403)
@@ -141,23 +137,19 @@ def create_student_transcript_blueprint():
         # Generate HTML
         html_content = TranscriptService.generate_full_transcript_html(transcript)
         
-        # Convert HTML to PDF using WeasyPrint
+        # Convert HTML to image
         try:
-            pdf_file = BytesIO()
-            HTML(string=html_content).write_pdf(pdf_file)
-            pdf_file.seek(0)
+            img_data = generate_image_from_html(html_content, format="png", width=1000)
             
             student_name = current_user.full_name.replace(' ', '_')
-            filename = f"Full_Transcript_{student_name}.pdf"
+            filename = f"Full_Transcript_{student_name}.png"
             
-            return send_file(
-                pdf_file,
-                mimetype='application/pdf',
-                as_attachment=True,
-                download_name=filename
-            )
+            response = make_response(img_data.getvalue())
+            response.headers['Content-Type'] = 'image/png'
+            response.headers['Content-Disposition'] = f'attachment; filename={filename}'
+            return response
         except Exception as e:
-            flash(f"Error generating PDF: {str(e)}", "danger")
+            flash(f"Error generating image: {str(e)}", "danger")
             return redirect(url_for('student_transcript.full_transcript'))
     
     @transcript_bp.route('/api/semester/<path:academic_year>/<semester>')

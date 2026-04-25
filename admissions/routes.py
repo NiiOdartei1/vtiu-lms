@@ -4,7 +4,6 @@ import json
 import logging
 import os, random, string
 from flask import (Blueprint, current_app, render_template, redirect, request, url_for, flash, session, make_response)
-from weasyprint import HTML, CSS
 from models import ProgrammeFeeStructure
 from utils.email import send_email, send_application_completed_email, send_email_verification
 from utils.security import verify_email_code
